@@ -15,108 +15,7 @@ namespace PhotoTaggerWinApp
 {
     public class PropertyWriter
     {
-        public void Test(string filePath)
-        {
-            ShellPropertyWriter w = null;
-            try
-            {
-                var shellFile = ShellFile.FromParsingName(filePath);
-                w = shellFile.Properties.GetPropertyWriter();
-                try
-                {
-                    //w.WriteProperty(SystemProperties.System.Author, new string[] { "MyTest", "Test" });
-                    //w.WriteProperty(SystemProperties.System.Music.Artist, new string[] { "MyTest", "Test" });
-                    //w.WriteProperty(SystemProperties.System.Music.DisplayArtist, "Test");
-
-                    
-                    w.WriteProperty(SystemProperties.System.Photo.DateTaken, "1903-05-10");
-                    w.WriteProperty(SystemProperties.System.Photo.PeopleNames, "Person 1, Person 2, Person 3");
-                    w.WriteProperty(SystemProperties.System.Photo.PeopleNames, new string[] { "Person 1", "Person 2", "Person 3" });
-
-                    w.WriteProperty(SystemProperties.System.FileDescription, "Photo showing blah blah blah etc Description here.");
-                    w.WriteProperty(SystemProperties.System.Comment, "From the personal archives of Joyce Fletcher. Billings, Montana");
-
-                    w.WriteProperty(SystemProperties.System.DateArchived, "2023-11-07");
-                    w.WriteProperty(SystemProperties.System.Media.DateEncoded, "2023-11-07");
-
-                    w.WriteProperty(SystemProperties.System.Copyright, "Copyright © 2023 Scott Fletcher");
-                    w.WriteProperty(SystemProperties.System.Keywords, new string[] { "Myers, Fletcher, historical, vintage" });
-
-                    //Bitmap CODEC does not support these properties:
-                    //w.WriteProperty(SystemProperties.System.Media.Year, "1903");
-
-
-                }
-                catch (Exception ex)
-                {
-                    //maybe do some property-specific error handling here
-                    throw;
-                }
-            }
-            catch (Exception exOpen)
-            {
-                //Wanna do anything when opening the filewriter fails?
-                throw;
-            }
-            finally 
-            {
-                if (w != null)
-                {
-                    w.Close();
-                }
-            }
-        }
-
-        public void Test2(string filePath)
-        {
-            ShellObject f = null;
-            try
-            {
-                f = ShellFile.FromParsingName(filePath);
-                try
-                {
-                    //w.WriteProperty(SystemProperties.System.Author, new string[] { "MyTest", "Test" });
-                    //w.WriteProperty(SystemProperties.System.Music.Artist, new string[] { "MyTest", "Test" });
-                    //w.WriteProperty(SystemProperties.System.Music.DisplayArtist, "Test");
-
-                    f.Properties.System.Photo.DateTaken.Value = DateTime.Parse("1903-05-10");
-                    //f.Properties.System.Photo.PeopleNames = "Person 1, Person 2, Person 3";
-                    f.Properties.System.Photo.PeopleNames.Value = new string[] { "Person 1", "Person 2", "Person 3" };
-
-                    f.Properties.System.FileDescription.Value = "Photo showing blah blah blah etc Description here.";
-                    f.Properties.System.Comment.Value = "From the personal archives of Joyce Fletcher. Billings, Montana";
-
-                    f.Properties.System.DateArchived.Value = DateTime.Parse("2023-11-07");
-                    f.Properties.System.Media.DateEncoded.Value = DateTime.Parse("2023-11-07");
-
-                    f.Properties.System.Copyright.Value = "Copyright © 2023 Scott Fletcher";
-                    f.Properties.System.Keywords.Value = new string[] { "Myers, Fletcher, historical, vintage" };
-
-                    //Bitmap CODEC does not support these properties:
-                    //w.WriteProperty(SystemProperties.System.Media.Year, "1903");
-
-
-                }
-                catch (Exception ex)
-                {
-                    //maybe do some property-specific error handling here
-                    throw;
-                }
-            }
-            catch (Exception exOpen)
-            {
-                //Wanna do anything when opening the filewriter fails?
-                throw;
-            }
-            finally
-            {
-                if (f != null)
-                {
-                    f.Dispose();
-                }
-            }
-        }
-
+ 
         public void Test3(string filePath, string targetFolderPath, string appendFileNameWith)
         {
             // Load the JPEG image
@@ -189,16 +88,11 @@ namespace PhotoTaggerWinApp
 
             try
             {
-
                 // Create PropertyItem for DateTaken (ID: 0x9003)
                 PropertyItem dateTakenProperty = SetProperty(image, SystemProperties.System.Photo.DateTaken.PropertyId, p.DateTaken.ToString("yyyy:MM:dd HH:mm:ss"));
 
                 // Create PropertyItem for Copyright (ID: 0x8298)
-                //PropertyItem copyrightProperty = SetProperty(image, SystemProperties.System.Copyright.PropertyId, p.Copyright);
                 PropertyItem copyrightProperty = SetProperty(image, 0x8298, p.Copyright);
-
-                //PropertyItem yearProperty = SetProperty(image, SystemProperties.System.Media.Year.PropertyId, p.Year);
-                //PropertyItem peopleNamesProperty = SetProperty(image, SystemProperties.System.Photo.PeopleNames.PropertyId, p.PeopleNames);
 
                 //PropertyItem descriptionProperty = SetProperty(image, SystemProperties.System.FileDescription.PropertyId, p.FileDescription);
                 PropertyItem descriptionProperty = SetProperty(image, 0x010E, p.ImageDescription);

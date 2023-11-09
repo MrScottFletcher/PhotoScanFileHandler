@@ -10,24 +10,11 @@ using System.Windows.Forms;
 
 namespace PhotoTaggerWinApp
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
-            //         // Allow the ListBox to be a drag-and-drop source
-            //listBox1.AllowDrop = true;
-            //// Allow the PictureBox to be a drag-and-drop target
-            //pictureBox1.AllowDrop = true;
-
-            //// Subscribe to the ListBox's DragDrop and DragEnter events
-            //listBox1.DragDrop += ListBox_DragDrop;
-            //listBox1.DragEnter += ListBox_DragEnter;
-
-            //// Subscribe to the PictureBox's DragEnter and DragDrop events
-            //pictureBox1.DragEnter += PictureBox_DragEnter;
-            //pictureBox1.DragDrop += PictureBox_DragDrop;
-
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -89,37 +76,13 @@ namespace PhotoTaggerWinApp
             }
         }
 
-
-        private void closeBackImageButton_Click(object sender, EventArgs e)
+        private void CloseAllOpenFiles()
         {
             CloseBackImage();
-        }
-
-        private void closeFrontImageButton_Click(object sender, EventArgs e)
-        {
             CloseFrontImage();
         }
 
-        private void CloseFrontImage()
-        {
-            CloseImage(frontPictureBox);
-        }
-
-        private void CloseBackImage()
-        {
-            CloseImage(backPictureBox);
-        }
-
-        private void CloseImage(PictureBox box)
-        {
-            if (box.Image != null)
-            {
-                Image img = box.Image;
-                box.Image = null;
-                img.Dispose();
-            }
-        }
-
+        
         private void swapButton_Click(object sender, EventArgs e)
         {
             SwapFrontAndBack();
@@ -143,6 +106,73 @@ namespace PhotoTaggerWinApp
             backFileNameTextBox.Text = fs;
 
         }
+
+        private void saveOpenChangesButton_Click(object sender, EventArgs e)
+        {
+            SetImagePropertiesFrontAndBack();
+            SaveAllOpenFiles();
+            CloseAllOpenFiles();
+        }
+
+        private void SaveAllOpenFiles()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void SetImagePropertiesFrontAndBack()
+        {
+            throw new NotImplementedException();
+        }
+
+
+        #region Open and Close images
+        private void closeBackImageButton_Click(object sender, EventArgs e)
+        {
+            CloseBackImage();
+        }
+
+        private void closeFrontImageButton_Click(object sender, EventArgs e)
+        {
+            CloseFrontImage();
+        }
+
+        private void CloseFrontImage()
+        {
+            CloseImage(frontPictureBox);
+            ClearFrontTextBoxes();
+        }
+
+        private void ClearFrontTextBoxes()
+        {
+            frontFileNameTextBox.Text = "";
+            frontResultingFileNameTextBox.Text = "";
+        }
+
+        private void CloseBackImage()
+        {
+            CloseImage(backPictureBox);
+            ClearBackTextBoxes();
+        }
+
+        private void ClearBackTextBoxes()
+        {
+            backFileNameTextBox.Text = "";
+            backResultingFileNameTextBox.Text = "";
+        }
+
+        private void CloseImage(PictureBox box)
+        {
+            if (box.Image != null)
+            {
+                Image img = box.Image;
+                box.Image = null;
+                img.Dispose();
+            }
+        }
+
+        #endregion
+
+        #region Enablement and Drag and Drop code
 
         private void startMonitorButton_Click(object sender, EventArgs e)
         {
@@ -231,5 +261,8 @@ namespace PhotoTaggerWinApp
                 fileChangeListBox.DoDragDrop(selectedText, DragDropEffects.Copy);
             }
         }
+
+        #endregion
+
     }
 }

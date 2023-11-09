@@ -1,7 +1,7 @@
 ﻿
 namespace PhotoTaggerWinApp
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -34,22 +34,20 @@ namespace PhotoTaggerWinApp
             this.testButton = new System.Windows.Forms.Button();
             this.testFileTextBox1 = new System.Windows.Forms.TextBox();
             this.filesGroupBox = new System.Windows.Forms.GroupBox();
+            this.propertiesGroupBox = new System.Windows.Forms.GroupBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.backResultingFileNameTextBox = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.frontResultingFileNameTextBox = new System.Windows.Forms.TextBox();
             this.closeFrontImageButton = new System.Windows.Forms.Button();
             this.saveOpenChangesButton = new System.Windows.Forms.Button();
             this.closeBackImageButton = new System.Windows.Forms.Button();
             this.fileChangeListBox = new System.Windows.Forms.ListBox();
             this.abandonBackImage = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.backFileNameTextBox = new System.Windows.Forms.TextBox();
             this.frontFileNameLabel = new System.Windows.Forms.Label();
             this.frontFileNameTextBox = new System.Windows.Forms.TextBox();
-            this.unlinkButton = new System.Windows.Forms.Button();
             this.swapButton = new System.Windows.Forms.Button();
             this.backPictureBox = new System.Windows.Forms.PictureBox();
             this.backLabel = new System.Windows.Forms.Label();
@@ -66,13 +64,16 @@ namespace PhotoTaggerWinApp
             this.startMonitorButton = new System.Windows.Forms.Button();
             this.stopMonitorButton = new System.Windows.Forms.Button();
             this.forceGetButton = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
-            this.backResultingFileNameTextBox = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.frontResultingFileNameTextBox = new System.Windows.Forms.TextBox();
-            this.propertiesGroupBox = new System.Windows.Forms.GroupBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.copyrightLabel = new System.Windows.Forms.Label();
+            this.copyrightTextBox = new System.Windows.Forms.TextBox();
+            this.preset1Button = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.fsw1)).BeginInit();
             this.filesGroupBox.SuspendLayout();
+            this.propertiesGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.backPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.frontPictureBox)).BeginInit();
             this.SuspendLayout();
@@ -104,7 +105,7 @@ namespace PhotoTaggerWinApp
             | System.Windows.Forms.AnchorStyles.Right)));
             this.testFileTextBox1.Location = new System.Drawing.Point(238, 24);
             this.testFileTextBox1.Name = "testFileTextBox1";
-            this.testFileTextBox1.Size = new System.Drawing.Size(1007, 20);
+            this.testFileTextBox1.Size = new System.Drawing.Size(780, 20);
             this.testFileTextBox1.TabIndex = 1;
             this.testFileTextBox1.Text = "C:\\Temp_ScanTest\\Front.jpg";
             // 
@@ -113,6 +114,10 @@ namespace PhotoTaggerWinApp
             this.filesGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.filesGroupBox.Controls.Add(this.label11);
+            this.filesGroupBox.Controls.Add(this.textBox1);
+            this.filesGroupBox.Controls.Add(this.label12);
+            this.filesGroupBox.Controls.Add(this.textBox2);
             this.filesGroupBox.Controls.Add(this.propertiesGroupBox);
             this.filesGroupBox.Controls.Add(this.label9);
             this.filesGroupBox.Controls.Add(this.backResultingFileNameTextBox);
@@ -123,17 +128,10 @@ namespace PhotoTaggerWinApp
             this.filesGroupBox.Controls.Add(this.closeBackImageButton);
             this.filesGroupBox.Controls.Add(this.fileChangeListBox);
             this.filesGroupBox.Controls.Add(this.abandonBackImage);
-            this.filesGroupBox.Controls.Add(this.label5);
-            this.filesGroupBox.Controls.Add(this.label6);
-            this.filesGroupBox.Controls.Add(this.label7);
-            this.filesGroupBox.Controls.Add(this.textBox3);
-            this.filesGroupBox.Controls.Add(this.textBox4);
-            this.filesGroupBox.Controls.Add(this.textBox5);
             this.filesGroupBox.Controls.Add(this.label1);
             this.filesGroupBox.Controls.Add(this.backFileNameTextBox);
             this.filesGroupBox.Controls.Add(this.frontFileNameLabel);
             this.filesGroupBox.Controls.Add(this.frontFileNameTextBox);
-            this.filesGroupBox.Controls.Add(this.unlinkButton);
             this.filesGroupBox.Controls.Add(this.swapButton);
             this.filesGroupBox.Controls.Add(this.backPictureBox);
             this.filesGroupBox.Controls.Add(this.backLabel);
@@ -141,37 +139,85 @@ namespace PhotoTaggerWinApp
             this.filesGroupBox.Controls.Add(this.frontLabel);
             this.filesGroupBox.Location = new System.Drawing.Point(42, 110);
             this.filesGroupBox.Name = "filesGroupBox";
-            this.filesGroupBox.Size = new System.Drawing.Size(1203, 767);
+            this.filesGroupBox.Size = new System.Drawing.Size(976, 711);
             this.filesGroupBox.TabIndex = 3;
             this.filesGroupBox.TabStop = false;
             this.filesGroupBox.Text = "Files Info";
             // 
+            // propertiesGroupBox
+            // 
+            this.propertiesGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.propertiesGroupBox.Controls.Add(this.preset1Button);
+            this.propertiesGroupBox.Controls.Add(this.copyrightTextBox);
+            this.propertiesGroupBox.Controls.Add(this.copyrightLabel);
+            this.propertiesGroupBox.Location = new System.Drawing.Point(26, 507);
+            this.propertiesGroupBox.Name = "propertiesGroupBox";
+            this.propertiesGroupBox.Size = new System.Drawing.Size(760, 177);
+            this.propertiesGroupBox.TabIndex = 29;
+            this.propertiesGroupBox.TabStop = false;
+            this.propertiesGroupBox.Text = "Properties";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(21, 95);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(96, 13);
+            this.label9.TabIndex = 28;
+            this.label9.Text = "Resulting Filename";
+            // 
+            // backResultingFileNameTextBox
+            // 
+            this.backResultingFileNameTextBox.Location = new System.Drawing.Point(123, 88);
+            this.backResultingFileNameTextBox.Name = "backResultingFileNameTextBox";
+            this.backResultingFileNameTextBox.Size = new System.Drawing.Size(230, 20);
+            this.backResultingFileNameTextBox.TabIndex = 27;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(406, 92);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(96, 13);
+            this.label10.TabIndex = 26;
+            this.label10.Text = "Resulting Filename";
+            // 
+            // frontResultingFileNameTextBox
+            // 
+            this.frontResultingFileNameTextBox.Location = new System.Drawing.Point(508, 89);
+            this.frontResultingFileNameTextBox.Name = "frontResultingFileNameTextBox";
+            this.frontResultingFileNameTextBox.Size = new System.Drawing.Size(205, 20);
+            this.frontResultingFileNameTextBox.TabIndex = 25;
+            // 
             // closeFrontImageButton
             // 
-            this.closeFrontImageButton.Location = new System.Drawing.Point(599, 393);
+            this.closeFrontImageButton.Location = new System.Drawing.Point(586, 411);
             this.closeFrontImageButton.Name = "closeFrontImageButton";
-            this.closeFrontImageButton.Size = new System.Drawing.Size(75, 23);
+            this.closeFrontImageButton.Size = new System.Drawing.Size(95, 45);
             this.closeFrontImageButton.TabIndex = 24;
-            this.closeFrontImageButton.Text = "Close File";
+            this.closeFrontImageButton.Text = "Close File\r\n(NO SAVE)";
             this.closeFrontImageButton.UseVisualStyleBackColor = true;
             this.closeFrontImageButton.Click += new System.EventHandler(this.closeFrontImageButton_Click);
             // 
             // saveOpenChangesButton
             // 
-            this.saveOpenChangesButton.Location = new System.Drawing.Point(351, 382);
+            this.saveOpenChangesButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.saveOpenChangesButton.Location = new System.Drawing.Point(333, 419);
             this.saveOpenChangesButton.Name = "saveOpenChangesButton";
-            this.saveOpenChangesButton.Size = new System.Drawing.Size(113, 44);
+            this.saveOpenChangesButton.Size = new System.Drawing.Size(169, 82);
             this.saveOpenChangesButton.TabIndex = 22;
-            this.saveOpenChangesButton.Text = "Save Open Files";
+            this.saveOpenChangesButton.Text = "Save and Close Any Open Files";
             this.saveOpenChangesButton.UseVisualStyleBackColor = true;
+            this.saveOpenChangesButton.Click += new System.EventHandler(this.saveOpenChangesButton_Click);
             // 
             // closeBackImageButton
             // 
-            this.closeBackImageButton.Location = new System.Drawing.Point(158, 393);
+            this.closeBackImageButton.Location = new System.Drawing.Point(137, 410);
             this.closeBackImageButton.Name = "closeBackImageButton";
-            this.closeBackImageButton.Size = new System.Drawing.Size(75, 23);
+            this.closeBackImageButton.Size = new System.Drawing.Size(80, 47);
             this.closeBackImageButton.TabIndex = 22;
-            this.closeBackImageButton.Text = "Close File";
+            this.closeBackImageButton.Text = "Close File\r\n(NO SAVE)\r\n";
             this.closeBackImageButton.UseVisualStyleBackColor = true;
             this.closeBackImageButton.Click += new System.EventHandler(this.closeBackImageButton_Click);
             // 
@@ -183,7 +229,7 @@ namespace PhotoTaggerWinApp
             this.fileChangeListBox.FormattingEnabled = true;
             this.fileChangeListBox.Location = new System.Drawing.Point(817, 90);
             this.fileChangeListBox.Name = "fileChangeListBox";
-            this.fileChangeListBox.Size = new System.Drawing.Size(363, 498);
+            this.fileChangeListBox.Size = new System.Drawing.Size(136, 433);
             this.fileChangeListBox.TabIndex = 23;
             this.fileChangeListBox.DragDrop += new System.Windows.Forms.DragEventHandler(this.fileChangeListBox_DragDrop);
             this.fileChangeListBox.DragEnter += new System.Windows.Forms.DragEventHandler(this.fileChangeListBox_DragEnter);
@@ -192,75 +238,12 @@ namespace PhotoTaggerWinApp
             // abandonBackImage
             // 
             this.abandonBackImage.BackColor = System.Drawing.SystemColors.Info;
-            this.abandonBackImage.Location = new System.Drawing.Point(123, 88);
+            this.abandonBackImage.Location = new System.Drawing.Point(123, 114);
             this.abandonBackImage.Name = "abandonBackImage";
             this.abandonBackImage.Size = new System.Drawing.Size(149, 23);
             this.abandonBackImage.TabIndex = 18;
             this.abandonBackImage.Text = "Abandon Back Image";
             this.abandonBackImage.UseVisualStyleBackColor = false;
-            // 
-            // label5
-            // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(20, 727);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(97, 13);
-            this.label5.TabIndex = 17;
-            this.label5.Text = "Append Name with";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // label6
-            // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(47, 701);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(70, 13);
-            this.label6.TabIndex = 16;
-            this.label6.Text = "Target Folder";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // label7
-            // 
-            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(76, 674);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(41, 13);
-            this.label7.TabIndex = 15;
-            this.label7.Text = "Source";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox3.Location = new System.Drawing.Point(123, 724);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(621, 20);
-            this.textBox3.TabIndex = 14;
-            this.textBox3.Text = "_tagged";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox4.Location = new System.Drawing.Point(123, 698);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(1007, 20);
-            this.textBox4.TabIndex = 13;
-            this.textBox4.Text = "C:\\Temp_ScanTest\\";
-            // 
-            // textBox5
-            // 
-            this.textBox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox5.Location = new System.Drawing.Point(123, 672);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(1007, 20);
-            this.textBox5.TabIndex = 12;
-            this.textBox5.Text = "C:\\Temp_ScanTest\\Front.jpg";
             // 
             // label1
             // 
@@ -294,18 +277,9 @@ namespace PhotoTaggerWinApp
             this.frontFileNameTextBox.Size = new System.Drawing.Size(205, 20);
             this.frontFileNameTextBox.TabIndex = 8;
             // 
-            // unlinkButton
-            // 
-            this.unlinkButton.Location = new System.Drawing.Point(352, 90);
-            this.unlinkButton.Name = "unlinkButton";
-            this.unlinkButton.Size = new System.Drawing.Size(112, 23);
-            this.unlinkButton.TabIndex = 7;
-            this.unlinkButton.Text = "-> Unlink Back<-";
-            this.unlinkButton.UseVisualStyleBackColor = true;
-            // 
             // swapButton
             // 
-            this.swapButton.Location = new System.Drawing.Point(368, 225);
+            this.swapButton.Location = new System.Drawing.Point(368, 251);
             this.swapButton.Name = "swapButton";
             this.swapButton.Size = new System.Drawing.Size(75, 67);
             this.swapButton.TabIndex = 7;
@@ -316,7 +290,7 @@ namespace PhotoTaggerWinApp
             // backPictureBox
             // 
             this.backPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.backPictureBox.Location = new System.Drawing.Point(26, 117);
+            this.backPictureBox.Location = new System.Drawing.Point(26, 143);
             this.backPictureBox.Name = "backPictureBox";
             this.backPictureBox.Size = new System.Drawing.Size(327, 261);
             this.backPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -338,7 +312,7 @@ namespace PhotoTaggerWinApp
             // frontPictureBox
             // 
             this.frontPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.frontPictureBox.Location = new System.Drawing.Point(461, 117);
+            this.frontPictureBox.Location = new System.Drawing.Point(461, 143);
             this.frontPictureBox.Name = "frontPictureBox";
             this.frontPictureBox.Size = new System.Drawing.Size(327, 261);
             this.frontPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -363,7 +337,7 @@ namespace PhotoTaggerWinApp
             | System.Windows.Forms.AnchorStyles.Right)));
             this.targetPathTextBox.Location = new System.Drawing.Point(238, 50);
             this.targetPathTextBox.Name = "targetPathTextBox";
-            this.targetPathTextBox.Size = new System.Drawing.Size(1007, 20);
+            this.targetPathTextBox.Size = new System.Drawing.Size(780, 20);
             this.targetPathTextBox.TabIndex = 4;
             this.targetPathTextBox.Text = "C:\\Temp_ScanTest\\";
             // 
@@ -373,7 +347,7 @@ namespace PhotoTaggerWinApp
             | System.Windows.Forms.AnchorStyles.Right)));
             this.appendFileNameTextBox.Location = new System.Drawing.Point(238, 76);
             this.appendFileNameTextBox.Name = "appendFileNameTextBox";
-            this.appendFileNameTextBox.Size = new System.Drawing.Size(621, 20);
+            this.appendFileNameTextBox.Size = new System.Drawing.Size(394, 20);
             this.appendFileNameTextBox.TabIndex = 5;
             this.appendFileNameTextBox.Text = "_tagged";
             // 
@@ -410,7 +384,7 @@ namespace PhotoTaggerWinApp
             // saveButton
             // 
             this.saveButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.saveButton.Location = new System.Drawing.Point(572, 883);
+            this.saveButton.Location = new System.Drawing.Point(459, 827);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(140, 55);
             this.saveButton.TabIndex = 9;
@@ -433,14 +407,14 @@ namespace PhotoTaggerWinApp
             | System.Windows.Forms.AnchorStyles.Right)));
             this.watchFolderTextBox.Location = new System.Drawing.Point(238, 0);
             this.watchFolderTextBox.Name = "watchFolderTextBox";
-            this.watchFolderTextBox.Size = new System.Drawing.Size(1007, 20);
+            this.watchFolderTextBox.Size = new System.Drawing.Size(780, 20);
             this.watchFolderTextBox.TabIndex = 18;
             this.watchFolderTextBox.Text = "C:\\Temp_ScanTest\\";
             // 
             // startMonitorButton
             // 
             this.startMonitorButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.startMonitorButton.Location = new System.Drawing.Point(1074, 79);
+            this.startMonitorButton.Location = new System.Drawing.Point(847, 79);
             this.startMonitorButton.Name = "startMonitorButton";
             this.startMonitorButton.Size = new System.Drawing.Size(75, 23);
             this.startMonitorButton.TabIndex = 20;
@@ -451,7 +425,7 @@ namespace PhotoTaggerWinApp
             // stopMonitorButton
             // 
             this.stopMonitorButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.stopMonitorButton.Location = new System.Drawing.Point(1155, 79);
+            this.stopMonitorButton.Location = new System.Drawing.Point(928, 79);
             this.stopMonitorButton.Name = "stopMonitorButton";
             this.stopMonitorButton.Size = new System.Drawing.Size(75, 23);
             this.stopMonitorButton.TabIndex = 21;
@@ -463,61 +437,77 @@ namespace PhotoTaggerWinApp
             // 
             this.forceGetButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.forceGetButton.Enabled = false;
-            this.forceGetButton.Location = new System.Drawing.Point(913, 79);
+            this.forceGetButton.Location = new System.Drawing.Point(686, 79);
             this.forceGetButton.Name = "forceGetButton";
             this.forceGetButton.Size = new System.Drawing.Size(147, 23);
             this.forceGetButton.TabIndex = 20;
             this.forceGetButton.Text = "Force Get Latest two";
             this.forceGetButton.UseVisualStyleBackColor = true;
             // 
-            // label9
+            // label11
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(21, 69);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(96, 13);
-            this.label9.TabIndex = 28;
-            this.label9.Text = "Resulting Filename";
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(21, 66);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(96, 13);
+            this.label11.TabIndex = 33;
+            this.label11.Text = "Append back with:";
             // 
-            // backResultingFileNameTextBox
+            // textBox1
             // 
-            this.backResultingFileNameTextBox.Location = new System.Drawing.Point(123, 62);
-            this.backResultingFileNameTextBox.Name = "backResultingFileNameTextBox";
-            this.backResultingFileNameTextBox.Size = new System.Drawing.Size(230, 20);
-            this.backResultingFileNameTextBox.TabIndex = 27;
+            this.textBox1.Location = new System.Drawing.Point(123, 62);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(67, 20);
+            this.textBox1.TabIndex = 32;
+            this.textBox1.Text = "_back";
             // 
-            // label10
+            // label12
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(406, 66);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(96, 13);
-            this.label10.TabIndex = 26;
-            this.label10.Text = "Resulting Filename";
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(409, 66);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(93, 13);
+            this.label12.TabIndex = 31;
+            this.label12.Text = "Append front with:";
             // 
-            // frontResultingFileNameTextBox
+            // textBox2
             // 
-            this.frontResultingFileNameTextBox.Location = new System.Drawing.Point(508, 63);
-            this.frontResultingFileNameTextBox.Name = "frontResultingFileNameTextBox";
-            this.frontResultingFileNameTextBox.Size = new System.Drawing.Size(205, 20);
-            this.frontResultingFileNameTextBox.TabIndex = 25;
+            this.textBox2.Location = new System.Drawing.Point(508, 63);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(69, 20);
+            this.textBox2.TabIndex = 30;
+            this.textBox2.Text = "_front";
             // 
-            // propertiesGroupBox
+            // copyrightLabel
             // 
-            this.propertiesGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.propertiesGroupBox.Location = new System.Drawing.Point(26, 432);
-            this.propertiesGroupBox.Name = "propertiesGroupBox";
-            this.propertiesGroupBox.Size = new System.Drawing.Size(760, 213);
-            this.propertiesGroupBox.TabIndex = 29;
-            this.propertiesGroupBox.TabStop = false;
-            this.propertiesGroupBox.Text = "Properties";
+            this.copyrightLabel.AutoSize = true;
+            this.copyrightLabel.Location = new System.Drawing.Point(7, 65);
+            this.copyrightLabel.Name = "copyrightLabel";
+            this.copyrightLabel.Size = new System.Drawing.Size(51, 13);
+            this.copyrightLabel.TabIndex = 0;
+            this.copyrightLabel.Text = "Copyright";
             // 
-            // Form1
+            // copyrightTextBox
+            // 
+            this.copyrightTextBox.Location = new System.Drawing.Point(64, 62);
+            this.copyrightTextBox.Name = "copyrightTextBox";
+            this.copyrightTextBox.Size = new System.Drawing.Size(670, 20);
+            this.copyrightTextBox.TabIndex = 1;
+            // 
+            // preset1Button
+            // 
+            this.preset1Button.Location = new System.Drawing.Point(64, 19);
+            this.preset1Button.Name = "preset1Button";
+            this.preset1Button.Size = new System.Drawing.Size(75, 23);
+            this.preset1Button.TabIndex = 2;
+            this.preset1Button.Text = "Preset 1";
+            this.preset1Button.UseVisualStyleBackColor = true;
+            // 
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1287, 950);
+            this.ClientSize = new System.Drawing.Size(1060, 894);
             this.Controls.Add(this.stopMonitorButton);
             this.Controls.Add(this.forceGetButton);
             this.Controls.Add(this.startMonitorButton);
@@ -532,12 +522,15 @@ namespace PhotoTaggerWinApp
             this.Controls.Add(this.filesGroupBox);
             this.Controls.Add(this.testFileTextBox1);
             this.Controls.Add(this.testButton);
-            this.Name = "Form1";
+            this.MinimumSize = new System.Drawing.Size(1076, 933);
+            this.Name = "MainForm";
             this.Text = "Photo Tagger";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.fsw1)).EndInit();
             this.filesGroupBox.ResumeLayout(false);
             this.filesGroupBox.PerformLayout();
+            this.propertiesGroupBox.ResumeLayout(false);
+            this.propertiesGroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.backPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.frontPictureBox)).EndInit();
             this.ResumeLayout(false);
@@ -567,18 +560,11 @@ namespace PhotoTaggerWinApp
         private System.Windows.Forms.TextBox frontFileNameTextBox;
         private System.Windows.Forms.Button swapButton;
         private System.Windows.Forms.Button saveButton;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox watchFolderTextBox;
         private System.Windows.Forms.Button stopMonitorButton;
         private System.Windows.Forms.Button startMonitorButton;
         private System.Windows.Forms.Button abandonBackImage;
-        private System.Windows.Forms.Button unlinkButton;
         private System.Windows.Forms.Button forceGetButton;
         private System.Windows.Forms.ListBox fileChangeListBox;
         private System.Windows.Forms.Button closeFrontImageButton;
@@ -589,6 +575,13 @@ namespace PhotoTaggerWinApp
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox frontResultingFileNameTextBox;
         private System.Windows.Forms.GroupBox propertiesGroupBox;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox copyrightTextBox;
+        private System.Windows.Forms.Label copyrightLabel;
+        private System.Windows.Forms.Button preset1Button;
     }
 }
 
